@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ASP.NET Core 5 ProductReview Template</title>
+    @* Linking bootstrap css file *@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    @* Linking star rating css file *@
+    <link href="https://cdn.jsdelivr.net/gh/kartik-v/bootstrap-star-rating@4.1.2/themes/krajee-svg/theme.css" media="all" rel="stylesheet" type="text/css" />
+    @* Linking in the site css file *@
+    <link rel="stylesheet" href="~/css/site.css" />
+    @* Linking stylesheet for star rating system css files *@
+    <link rel="stylesheet" href="~/css/star-rating.css" />
+    <link rel="stylesheet" href="~/css/theme.css" />
+    @* Linking stylesheet and arrow icon for scroll to top *@
+    <link rel='stylesheet' href='https://s3-us-west-2.amazonaws.com/s.cdpn.io/1462889/unicons.css'>
+    @* Linking scroll to top css file *@
+    <link rel="stylesheet" href="~/css/scrollToTop.css" />
+</head>
+<body class="light">
+
+    <div class="container">
+        @RenderBody()
+    </div>
+    @* Linking JQuery js file *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script> 
+    @* Linking comment character counter js file *@
+    <script src="~/js/bootstrap-maxlength.js"></script>
+    @* linking star rating system js files *@
+    <script src="~/js/star-rating.js" ></script>
+    <script src="~/js/theme.js" ></script>
+    @* Linking scroll to top js file *@
+    <script src="~/js/scrollToTop.js" ></script>
+    @* Linking bootstrap js file *@
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    @* Linking site js file *@
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

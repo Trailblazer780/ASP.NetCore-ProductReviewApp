@@ -1,0 +1,96 @@
+﻿@model MyModel
+
+<div>
+    <h1 class="text-info text-center">Product Review - INET 2005 Project 1</h1>
+    <img id="product" style="padding-bottom: 20px;" src="images/Bike.png" class="img-fluid" alt="Norco Bicycle"/>
+</div>
+<div>
+    <h3 class="text-center">Product Description:</h3>
+
+    <div class="text-center">The Aurum A cranks out park lap after park lap all season long with World Cup proven performance and suspension that tames the roughest terrain and weaves epic gravity tales to share over parking lot refreshments.
+        Developed with Norco Factory Racing, the Aurum’s racing DNA will get your DH blood pumping when you’re testing yourself between the tape and against the clock.
+    </div>
+</div>
+
+<div id="btnReviewDiv" >
+    <button id="btnReview" class="btn btn-info" onclick="formVisibility()">Write Review</button>
+</div>
+
+<div id="reviewForm" style="display: none">
+    <form method="post">
+
+        <input type="hidden" id="rating-value" asp-for="@Model.ratingValue" value="@Model.ratingValue" />
+
+        <div class="rating-container rating-animate">
+            <label>Rating:</label>
+            <input id="rating-system" type="number" class="rating" min="0" max="5" step="1" data-size="lg">
+        </div>
+
+        <div class="form-group">
+            <label>First Name:</label>
+            <input id="txtFirstName" name="firstName" type="text" class="form-control" maxlength="25"/> 
+        </div>
+
+        <div class="form-group">
+            <label>Last Name:</label>
+            <input id="txtFirstName" name="lastName" type="text" class="form-control" maxlength="25"/> 
+        </div>
+
+        <div class="form-group">
+            <label>Review:</label>
+            <textarea id="txtReview" name="comment" type="text"  maxlength="200" class="form-control" rows="5" columns="50"></textarea>
+            <div class="placeholder"></div>
+        </div>
+        
+        <div class="form-group">
+            <button type="submit" class="btn btn-info" asp-controller="Home" asp-action="SubmitReview">Submit Review</button>
+            <button class="btn btn-info" onclick="formVisibility()">Cancel</button>
+        </div>
+    </form>
+</div>
+@* SVG for the back to top button *@
+<div class="progress-wrap">
+  <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98" />
+  </svg>
+</div>
+
+<div> 
+    @* foreach loop that will go through and print out all of the reviews in the html *@
+    @foreach (var item in Model.reviews)
+    {
+        <p id="rid_@item.reviewID" style="display: none">@item.reviewID</p>
+        <p id="rating-number_@item.reviewID" style="display: none">@item.rating</p>
+        <div class="rating-container rating-animate">
+            <input id="ratings_@item.reviewID" type="number" class="rating" min="0" max="5" step="1" data-readonly="true" data-disabled="true" data-size="md">
+        </div>
+
+        <table class="table">
+            <thread>
+                <tr>
+                    @* <th>Author: @item.firstName @item.lastName</th> *@
+                    <td class="text-start"><strong>Author: </strong>@item.firstName @item.lastName</td>
+                </tr>
+            </thread>
+            <thread>
+                <tr>
+                    @* <th scope="col">Review:</th> *@
+                    <td id="review" class="text-start"><strong>Review: </strong>@item.comment</td>
+                </tr>
+            </thread>
+            <thread>
+                <tr>
+                    @* <th scope="col">Date:</th> *@
+                    <td class="test-start"><strong>Date: </strong>@item.date</td>
+                </tr>
+            </thread>
+
+        </table>
+        
+    }
+</div>
+
+
+
+
+

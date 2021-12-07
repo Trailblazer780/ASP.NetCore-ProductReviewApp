@@ -1,0 +1,18 @@
+﻿body {
+  margin-top: 30px;
+}
+
+#review {
+  word-wrap: break-word;
+  min-width: 160px;
+  max-width: 160px;
+}
+
+#btnReviewDiv {
+  padding-bottom: 20px;
+  padding-top: 20px;
+}
+
+input.rating {
+  padding-bottom: 20px;
+}
