@@ -17,8 +17,8 @@ You must have docker installed on your computer to use this web application
 
 Below are screenshots of the web application in use:
 
-##Review panel open:
+## Review panel open:
 ![alt text](https://github.com/Trailblazer780/ASP.NetCore-ProductReviewApp/blob/master/Images/Example1.PNG)
 
-##After writing reviews:
+## After writing reviews:
 ![alt text](https://github.com/Trailblazer780/ASP.NetCore-ProductReviewApp/blob/master/Images/Example2.PNG)
